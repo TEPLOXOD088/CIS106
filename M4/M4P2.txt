@@ -1,0 +1,3 @@
+Input: Purchase price per share, Current stock price, Quantity of stock
+Processing: Value = (Current price – Purchase price) * Quantity
+Output: Increase/Decrease in stock value

@@ -1,0 +1,3 @@
+Input: Exam1 score, Exam2 score
+Processing: Total = (Exam1 × 0.60) + (Exam2 × 0.40)
+Output: Total exam score

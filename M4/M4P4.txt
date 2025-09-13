@@ -1,0 +1,3 @@
+Input: First name, Steps walked
+Processing: Calories burned = Steps × 0.25
+Output: First name and calories burned

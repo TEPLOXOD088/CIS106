@@ -1,0 +1,3 @@
+Input: Fixed costs, Price per unit, Cost per unit
+Processing: Break-even = Fixed costs ÷ (Price per unit – Cost per unit)
+Output: Break-even point (units to sell)

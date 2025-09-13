@@ -1,0 +1,3 @@
+Input: Meal total
+Processing: Compute 15%, 18%, 20% tips and totals (meal + tip)
+Output: Display meal, tip, total with tip (for each tip percent)
