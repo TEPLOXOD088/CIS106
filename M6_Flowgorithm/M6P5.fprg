@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="last_name" type="String"/>
+      <declare name="salary, bonus_rate, bonus" type="Real"/>
+      <declare name="job_level" type="Integer"/>
+      <output expression="&quot;Enter employee last name:&quot;" newline="true"/>
+      <input variable="last_name"/>
+      <output expression="&quot;Enter salary:&quot;" newline="true"/>
+      <input variable="salary"/>
+      <output expression="&quot;Enter job level:&quot;" newline="true"/>
+      <input variable="job_level"/>
+      <if expression="job_level &gt;= 10">
+        <then>
+          <assign variable="bonus_rate" expression="0.25"/>
+        </then>
+        <else>
+          <if expression="job_level &gt;= 5">
+            <then>
+              <assign variable="bonus_rate" expression="0.20"/>
+            </then>
+            <else>
+              <assign variable="bonus_rate" expression="0.10"/>
+            </else>
+          </if>
+        </else>
+      </if>
+      <assign variable="bonus" expression="salary * bonus_rate"/>
+      <output expression="&quot;Employee: &quot; + last_name" newline="true"/>
+      <output expression="&quot;Bonus: &quot; + bonus" newline="true"/>
+    </body>
+  </function>
+</flowgorithm>

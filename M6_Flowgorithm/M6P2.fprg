@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="part" type="String"/>
+      <declare name="quantity" type="Integer"/>
+      <declare name="unit_cost, total_cost" type="Real"/>
+      <output expression="&quot;Enter part number:&quot;" newline="true"/>
+      <input variable="part"/>
+      <output expression="&quot;Enter quantity:&quot;" newline="true"/>
+      <input variable="quantity"/>
+      <if expression="part = &quot;10&quot; or part = &quot;55&quot;">
+        <then>
+          <assign variable="unit_cost" expression="1.0"/>
+        </then>
+        <else>
+          <if expression="part = &quot;99&quot;">
+            <then>
+              <assign variable="unit_cost" expression="2.0"/>
+            </then>
+            <else>
+              <if expression="part = &quot;80&quot; or part = &quot;70&quot;">
+                <then>
+                  <assign variable="unit_cost" expression="3.0"/>
+                </then>
+                <else>
+                  <assign variable="unit_cost" expression="5.0"/>
+                </else>
+              </if>
+            </else>
+          </if>
+        </else>
+      </if>
+      <assign variable="total_cost" expression="quantity * unit_cost"/>
+      <output expression="&quot;Part Number: &quot; + part" newline="true"/>
+      <output expression="&quot;Cost per Unit: &quot; + unit_cost" newline="true"/>
+      <output expression="&quot;Total Cost: &quot; + total_cost" newline="true"/>
+    </body>
+  </function>
+</flowgorithm>

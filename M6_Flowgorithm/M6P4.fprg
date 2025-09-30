@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="tickets, price_per_ticket, total_cost" type="Real"/>
+      <output expression="&quot;Enter number of tickets:&quot;" newline="true"/>
+      <input variable="tickets"/>
+      <if expression="tickets &gt;= 25">
+        <then>
+          <assign variable="price_per_ticket" expression="50"/>
+        </then>
+        <else>
+          <if expression="tickets &gt;= 10">
+            <then>
+              <assign variable="price_per_ticket" expression="60"/>
+            </then>
+            <else>
+              <if expression="tickets &gt;= 5">
+                <then>
+                  <assign variable="price_per_ticket" expression="70"/>
+                </then>
+                <else>
+                  <assign variable="price_per_ticket" expression="75"/>
+                </else>
+              </if>
+            </else>
+          </if>
+        </else>
+      </if>
+      <assign variable="total_cost" expression="tickets * price_per_ticket"/>
+      <output expression="&quot;Tickets: &quot; + tickets" newline="true"/>
+      <output expression="&quot;Price per Ticket: &quot; + price_per_ticket" newline="true"/>
+      <output expression="&quot;Total Cost: &quot; + total_cost" newline="true"/>
+    </body>
+  </function>
+</flowgorithm>
