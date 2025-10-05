@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="choice" type="String" array="False" size=""/>
+      <declare name="count" type="Integer" array="False" size=""/>
+      <declare name="total" type="Real" array="False" size=""/>
+      <declare name="last" type="String" array="False" size=""/>
+      <declare name="hours" type="Real" array="False" size=""/>
+      <declare name="rate" type="Real" array="False" size=""/>
+      <declare name="gross" type="Real" array="False" size=""/>
+      <assign variable="count" expression="0"/>
+      <assign variable="total" expression="0"/>
+      <input variable="choice" prompt="Do you want to enter employee data? (Yes to continue):"/>
+      <while expression="choice = &quot;Yes&quot; or choice = &quot;yes&quot;">
+        <input variable="last" prompt="Enter employee last name:"/>
+        <input variable="hours" prompt="Enter hours worked:"/>
+        <input variable="rate" prompt="Enter rate of pay:"/>
+        <if expression="hours &gt; 40">
+          <then>
+            <assign variable="gross" expression="40*rate + (hours-40)*rate*1.5"/>
+          </then>
+          <else>
+            <assign variable="gross" expression="hours*rate"/>
+          </else>
+        </if>
+        <output expression="&quot;Employee: &quot; + last + &quot;, Gross Pay: &quot; + gross"/>
+        <assign variable="total" expression="total + gross"/>
+        <assign variable="count" expression="count + 1"/>
+        <input variable="choice" prompt="Do you want to enter another employee? (Yes to continue):"/>
+      </while>
+      <if expression="count &gt; 0">
+        <then>
+          <output expression="&quot;Total Employees: &quot; + count"/>
+          <output expression="&quot;Total Gross Pay: &quot; + total"/>
+          <output expression="&quot;Average Pay: &quot; + (total/count)"/>
+        </then>
+        <else>
+          <output expression="&quot;No employees entered.&quot;"/>
+        </else>
+      </if>
+    </body>
+  </function>
+</flowgorithm>

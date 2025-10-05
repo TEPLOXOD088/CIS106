@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="start" type="Integer" array="False" size=""/>
+      <declare name="stop" type="Integer" array="False" size=""/>
+      <declare name="step" type="Integer" array="False" size=""/>
+      <declare name="num" type="Integer" array="False" size=""/>
+      <input variable="start" prompt="Enter start value:"/>
+      <input variable="stop" prompt="Enter stop value:"/>
+      <input variable="step" prompt="Enter increment value:"/>
+      <assign variable="num" expression="start"/>
+      <while expression="num &lt;= stop">
+        <output expression="num"/>
+        <assign variable="num" expression="num + step"/>
+      </while>
+    </body>
+  </function>
+</flowgorithm>

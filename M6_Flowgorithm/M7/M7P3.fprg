@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="choice" type="String" array="False" size=""/>
+      <declare name="count" type="Integer" array="False" size=""/>
+      <declare name="last" type="String" array="False" size=""/>
+      <declare name="s1" type="Real" array="False" size=""/>
+      <declare name="s2" type="Real" array="False" size=""/>
+      <declare name="avg" type="Real" array="False" size=""/>
+      <assign variable="count" expression="0"/>
+      <input variable="choice" prompt="Do you want to enter student data? (Yes to continue):"/>
+      <while expression="choice = &quot;Yes&quot; or choice = &quot;yes&quot;">
+        <input variable="last" prompt="Enter last name:"/>
+        <input variable="s1" prompt="Enter first exam score:"/>
+        <input variable="s2" prompt="Enter second exam score:"/>
+        <assign variable="avg" expression="(s1+s2)/2"/>
+        <output expression="&quot;Student: &quot; + last + &quot;, Average: &quot; + avg"/>
+        <assign variable="count" expression="count + 1"/>
+        <input variable="choice" prompt="Do you want to enter another student? (Yes to continue):"/>
+      </while>
+      <output expression="&quot;Total students entered: &quot; + count"/>
+    </body>
+  </function>
+</flowgorithm>

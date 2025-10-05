@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+      <declare name="choice" type="String" array="False" size=""/>
+      <declare name="totalDisc" type="Real" array="False" size=""/>
+      <declare name="qty" type="Integer" array="False" size=""/>
+      <declare name="price" type="Real" array="False" size=""/>
+      <declare name="ext" type="Real" array="False" size=""/>
+      <declare name="disc" type="Real" array="False" size=""/>
+      <declare name="rate" type="Real" array="False" size=""/>
+      <declare name="total" type="Real" array="False" size=""/>
+      <assign variable="totalDisc" expression="0"/>
+      <input variable="choice" prompt="Do you want to enter an order? (Yes to continue):"/>
+      <while expression="choice = &quot;Yes&quot; or choice = &quot;yes&quot;">
+        <input variable="qty" prompt="Enter quantity:"/>
+        <input variable="price" prompt="Enter price per item:"/>
+        <assign variable="ext" expression="qty*price"/>
+        <if expression="ext &gt; 10000">
+          <then>
+            <assign variable="rate" expression="0.25"/>
+          </then>
+          <else>
+            <assign variable="rate" expression="0.10"/>
+          </else>
+        </if>
+        <assign variable="disc" expression="ext*rate"/>
+        <assign variable="total" expression="ext-disc"/>
+        <output expression="&quot;Extended Price: &quot; + ext"/>
+        <output expression="&quot;Discount: &quot; + disc"/>
+        <output expression="&quot;Total: &quot; + total"/>
+        <assign variable="totalDisc" expression="totalDisc+disc"/>
+        <input variable="choice" prompt="Do you want to enter another order? (Yes to continue):"/>
+      </while>
+      <output expression="&quot;Total Discounts Given: &quot; + totalDisc"/>
+    </body>
+  </function>
+</flowgorithm>
